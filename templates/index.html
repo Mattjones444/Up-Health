@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<nav class="nav-extended text-shadow">
+    <div class="nav-wrapper">
+        <a href="{{ url_for('home_page') }}" class="brand-logo">Up Health</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="{{ url_for('home_page') }}">Home</a></li>   
+        </ul>
+    </div>
+</nav>
+
+<!-- mobile sidenav -->
+<ul class="sidenav" id="mobile-demo">
+    <li><h4 class="center-align light-blue-text text-darken 4">Task Manager</h4></li>
+    <li><a href="{{ url_for('home_page') }}">Home</a></li>
+</ul>
+</header>
+<section>
+    <div id="jumbotron">
+        <image src="/static/images/jumboimage.jpg" class="jumbo-image"
+    </div>
+</section>
+
+
+
+
+{% endblock %}

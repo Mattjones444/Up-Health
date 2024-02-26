@@ -24,6 +24,15 @@ def get_dates():
     return render_template("dates.html", dates=dates)
 
 
+@app.route("/home_page")
+def home_page():
+    return render_template("index.html")
+
+
+
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
