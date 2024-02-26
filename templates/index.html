@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
+<header class="jumbotron-nav">
+    <div class="jumbotron">
+        <image src="/static/images/jumboimage.jpg" class="jumbo-image"
+    </div>
 <nav class="nav-extended text-shadow">
-    <div class="nav-wrapper">
+    <div class="nav-wrapper navbar-fixed">
         <a href="{{ url_for('home_page') }}" class="brand-logo">Up Health</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
@@ -9,6 +13,7 @@
         </ul>
     </div>
 </nav>
+</header>
 
 <!-- mobile sidenav -->
 <ul class="sidenav" id="mobile-demo">
@@ -16,11 +21,6 @@
     <li><a href="{{ url_for('home_page') }}">Home</a></li>
 </ul>
 </header>
-<section>
-    <div id="jumbotron">
-        <image src="/static/images/jumboimage.jpg" class="jumbo-image"
-    </div>
-</section>
 
 
 
