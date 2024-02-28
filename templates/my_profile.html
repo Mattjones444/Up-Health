@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<nav class="nav-extended light-blue lighten-2">
+    <div class="nav-wrapper navbar-fixed">
+        <a href="{{ url_for('home_page') }}" class="brand-logo center">Up Health Dashboard</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger right black"><i class="fas fa-bars"></i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="{{ url_for('dashboard') }}" class="black-text">Home</a></li> 
+            <li><a href="{{ url_for('register') }}" class="black-text" > My Intentions</a></li>
+            <li><a href="{{ url_for('register') }}" class="black-text" > My Profile</a></li>
+            
+        </ul>
+    </div>
+</nav>
+<ul class="sidenav" id="mobile-demo">
+    <li><h4 class="center-align light-blue-text text-darken 4">Up_Health</h4></li>
+    <li><a href="{{ url_for('dashboard') }}" class="black-text">Home</a></li> 
+    <li><a href="{{ url_for('register') }}" class="black-text" > My Intentions</a></li>
+    <li><a href="{{ url_for('register') }}" class="black-text" > My Profile</a></li>
+</ul>
+
+
+{% endblock %}

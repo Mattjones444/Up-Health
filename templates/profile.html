@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row jumbo-image">
+    <div class="div s12 left-align">
+    <a href="{{ url_for('home_page')}}" class="home-button black-text">Home</a>
+</div>
+    <div class="row jumbo-image">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_profile') }}">
+            <div class="card-panel">
+                <h3 class="center-align">Create your profile</h3>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
+                        <input id="profile_name" name="profile_name" type="text" class="validate" required>
+                        <label for="profile_name">Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="fas fa-birthday-cake prefix light-blue-text text-darken-4"></i>
+                        <select name="age" id="age">
+                          <option value="" disabled selected>Choose your age</option>
+                          <option value="45">45</option>
+                          <option value="46">46</option>
+                          <option value="47">47</option>
+                        </select>
+                        <label for="age">Age</label>
+                      </div>
+                <div class="input-field col s12">
+                    <i class="fas fa-arrow-up prefix light-blue-text text-darken-4"></i>
+                    <select name="height" id="height">
+                      <option value="" disabled selected>Choose your height (feet)</option>
+                      <option value="5'10">5'10</option>
+                      <option value="5'11">5'11</option>
+                      <option value="6'0">6'</option>
+                    </select>
+                    <label for="height">Height</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <i class="fas fa-arrow-up prefix light-blue-text text-darken-4"></i>
+                    <select name="weight" id="weight">
+                      <option value="" disabled selected>Choose your weight (weight)</option>
+                      <option value="60">60kg</option>
+                      <option value="61">61kg</option>
+                      <option value="62">62kg</option>
+                    </select>
+                    <label for="weight">Weight</label>
+                  </div>
+                  <div class="switch">
+                    <i class="fas fa-exclamation-circle prefix light-blue-text text-darken-4"></i>
+                    <label for="smoker">
+                    <input type="checkbox" id="smoker" name="smoker">
+                    <span class="lever"></span>
+                    Smoker
+                    </label>
+                </div>
+                <br>
+                <br>
+                  <div class="row">
+                    <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
+                        Create my Profile <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                </div>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -3,7 +3,6 @@ body,html {
     padding: 0;
   }
 
-
   .nav-extended{
     background: transparent;
     border: 0;
@@ -16,7 +15,7 @@ body,html {
   }
 
 .jumbo-image{
-  height: 900px;
+  height: 1200px;
   width: 100%;
   position: absolute;
   z-index: -100;
