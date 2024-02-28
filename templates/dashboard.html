@@ -8,17 +8,12 @@
         <ul class="right hide-on-med-and-down">
             <li><a href="{{ url_for('dashboard') }}" class="black-text">Home</a></li> 
             <li><a href="{{ url_for('register') }}" class="black-text" > My Intentions</a></li>
-            <li><a href="{{ url_for('register') }}" class="black-text" > My Profile</a></li>
+            <li><a href="{{ url_for('my_profile', username=session['user']) }}" class="black-text" > My Profile</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             
         </ul>
     </div>
 </nav>
-<ul class="sidenav" id="mobile-demo">
-    <li><h4 class="center-align light-blue-text text-darken 4">Up_Health</h4></li>
-    <li><a href="{{ url_for('home_page') }}" class="black-text">Home</a></li> 
-    <li><a href="{{ url_for('register') }}" class="black-text">Register</a></li>  
-    <li><a href="{{ url_for('login') }}" class="black-text">Log In</a></li>
-</ul>
 
 
 {% endblock %}

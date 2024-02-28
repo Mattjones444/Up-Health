@@ -23,13 +23,6 @@ mongo = PyMongo(app)
 def home_page():
     return render_template("index.html")
 
-
-@app.route("/get_dates")
-def get_dates():
-    dates = mongo.db.dates.find_one()
-    return render_template("dates.html", dates=dates)
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -82,6 +75,14 @@ def login():
 
     return render_template("login.html")
 
+@app.route("/logout")
+def logout():
+    # remove user from session cookie
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
+    
+
 @app.route("/profile", methods=["GET", "POST"])
 def add_profile():
     if request.method == "POST":
@@ -103,8 +104,12 @@ def dashboard():
     return render_template("dashboard.html")
 
 
-@app.route("/my_profile")
-def my_profile():
+@app.route("/my_profile/<username>", methods=["GET", "POST"])
+def my_profile(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+   
+    
     return render_template("my_profile.html")
 
 
