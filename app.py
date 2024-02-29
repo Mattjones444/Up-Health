@@ -92,7 +92,8 @@ def add_profile():
             "age": str(request.form['age']),
             "height": str(request.form['height']),
             "weight": int(request.form['weight']),
-            "smoker": smoker
+            "smoker": smoker,
+            "username": session['user']
         }
         mongo.db.profile_name.insert_one(profile)
         return redirect(url_for("dashboard"))
@@ -108,9 +109,8 @@ def dashboard():
 def my_profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-   
-    
-    return render_template("my_profile.html")
+    users_profile = mongo.db.profile_name.find_one({'username': session['user']})
+    return render_template("my_profile.html", users_profile=users_profile)
 
 
 if __name__ == "__main__":
