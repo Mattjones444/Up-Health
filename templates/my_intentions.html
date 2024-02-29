@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block content %}
+<nav class="nav-extended pink lighten-2">
+    <div class="nav-wrapper navbar-fixed">
+        <a href="{{ url_for('home_page') }}" class="brand-logo center">Up Health Dashboard</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger right black"><i class="fas fa-bars"></i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="{{ url_for('dashboard') }}" class="black-text">Home</a></li> 
+            <li><a href="" class="black-text" > My Intentions</a></li>
+            <li><a href="{{ url_for('my_profile', username=session['user']) }}" class="black-text" > My Profile</a></li>   
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+<h3 class=" white-text center-align">Select your Intention Area</h3>
+
+<!--Exercise Card-->
+<div class="row">
+    <div class="col s12 l6">
+        <div class="card medium">
+            <div class="card-image">
+                <img src="/static/images/exercise.jpg" alt="person exercising">
+            </div>
+            <div class="card-content center-align">
+                <span class="card-title">Exercise</span>
+                <p>Text content goes here</p>
+            </div>
+            <div class="div card-action center-align">
+                <a href="">View intentions</a>
+            </div>
+        </div>
+    </div>
+    <!--Sleep Card-->
+    <div class="row">
+    <div class="col s12 l6">
+        <div class="card medium">
+                <div class="card-image">
+                    <img src="/static/images/sleeping.jpeg" alt="person sleeping">
+                </div>
+                <div class="card-content center-align">
+                    <span class="card-title">Sleep</span>
+                    <p>Text content goes here</p>
+                </div>
+                <div class="div card-action center-align">
+                    <a href="">View intentions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Water Card-->
+    <div class="row">
+        <div class="col s12 l6">
+            <div class="card medium">
+                <div class="card-image">
+                    <img src="/static/images/water.jpeg" alt="person exercising">
+                </div>
+                <div class="card-content center-align">
+                    <span class="card-title">Water</span>
+                    <p>Text content goes here</p>
+                </div>
+                <div class="div card-action center-align">
+                    <a href="">View intentions</a>
+                </div>
+            </div>
+        </div>
+        <!--Mindfulness Card-->
+        <div class="row">
+        <div class="col s12 l6">
+            <div class="card medium">
+                    <div class="card-image">
+                        <img src="/static/images/mindfulness.jpeg" alt="person sleeping">
+                    </div>
+                    <div class="card-content center-align">
+                        <span class="card-title">Mindfulness</span>
+                        <p>Text content goes here</p>
+                    </div>
+                    <div class="div card-action center-align">
+                        <a href="">View intentions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+
+
+
+{% endblock %}

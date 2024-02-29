@@ -3,6 +3,11 @@ body,html {
     padding: 0;
   }
 
+body{
+  height: 1500px;
+  background-color: black;
+}
+
   .nav-extended{
     background: transparent;
     border: 0;
@@ -29,7 +34,7 @@ body,html {
   left: 0;
   bottom: 0;
   width:100%;
-  height: 180px;
+  height: 50px;
 }
 
 .card-panel{
@@ -40,3 +45,6 @@ body,html {
   padding-left:40px;
   font-size: 18px;
 }
+
+
+  
