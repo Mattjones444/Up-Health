@@ -118,6 +118,13 @@ def my_intentions():
     return render_template("my_intentions.html")
 
 
+@app.route("/exercise")
+def exercise():
+    exercises = mongo.db.exercise_intentions.find()
+    print('EXERCISE: ', exercise)
+    return render_template("exercise.html", exercises=exercises)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
