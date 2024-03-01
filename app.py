@@ -112,6 +112,7 @@ def my_profile(username):
     users_profile = mongo.db.profile_name.find_one({'username': session['user']})
     return render_template("my_profile.html", users_profile=users_profile)
 
+
 @app.route("/my_intentions", methods=["GET", "POST"])
 def my_intentions():
     return render_template("my_intentions.html")
