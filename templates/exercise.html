@@ -6,29 +6,29 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger right black"><i class="fas fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
             <li><a href="{{ url_for('dashboard') }}" class="black-text">Home</a></li> 
-            <li><a href="" class="black-text" > My Intentions</a></li>
+            <li><a href="{{ url_for('choose_intentions') }}" class="black-text" > Choose Intentions</a></li>
             <li><a href="{{ url_for('my_profile', username=session['user']) }}" class="black-text" > My Profile</a></li>   
         </ul>
     </div>
 </nav>
 
-<h3 class=" white-text center-align">Exercise Intentions</h3>
-
+<h3 class=" white-text center-align">Exercise Intentions</h3> 
 <div class="row">
     {% for exercise in exercises %}
-    <div class="col s12 l4">
-        <div class="card small">
-            <div class="card-image">
-                <img src="/static/images/exercise.jpg" alt="person exercising">
-            </div>
-            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="fas fa-plus"></i></a>
-            <div class="card-content center-align">
-                <span class="card-title">{{ exercise.action_name}}</span>
-            </div>
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image">
+          <img src="/static/images/exercise1.jpg">
+          <a class="btn-floating btn-medium waves-effect waves-light green right text center-align"></i>{{ exercise.health_points}}</a>
+          <span class="card-title">{{ exercise.action_name}}</span>
+          <a href="{{ url_for('add_intention') }}" class="btn-floating halfway-fab waves-effect pulse waves-light red"><i class="fas fa-plus"></i></a>
         </div>
+        <div class="card-content">
+        </div>
+      </div>
     </div>
     {% endfor %}
-</div>
+  </div>
     
 
 {% endblock %}

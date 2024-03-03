@@ -7,7 +7,7 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger right black"><i class="fas fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
             <li><a href="{{ url_for('dashboard') }}" class="black-text">Home</a></li> 
-            <li><a href="{{ url_for('my_intentions') }}" class="black-text" > My Intentions</a></li>
+            <li><a href="{{ url_for('choose_intentions') }}" class="black-text" > Choose Intentions</a></li>
             <li><a href="{{ url_for('my_profile', username=session['user']) }}" class="black-text" > My Profile</a></li>
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             

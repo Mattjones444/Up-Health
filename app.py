@@ -113,9 +113,9 @@ def my_profile(username):
     return render_template("my_profile.html", users_profile=users_profile)
 
 
-@app.route("/my_intentions", methods=["GET", "POST"])
-def my_intentions():
-    return render_template("my_intentions.html")
+@app.route("/choose_intentions", methods=["GET", "POST"])
+def choose_intentions():
+    return render_template("choose_intentions.html")
 
 
 @app.route("/exercise")
@@ -123,6 +123,19 @@ def exercise():
     exercises = mongo.db.exercise_intentions.find()
     print('EXERCISE: ', exercise)
     return render_template("exercise.html", exercises=exercises)
+
+@app.route("/add_intention/", methods=["GET", "POST"])
+def add_intention():
+    if request.method == "POST":
+        new_intention = {
+            "action_name": request.form.get("action_name")
+        }
+        mongo.db.profile_name.insert_one(new_intention)
+        flash("New Intention Added")
+        return redirect(url_for("my_intentions"))
+    return render_template("my_intentions.html")
+    
+
 
 
 if __name__ == "__main__":
