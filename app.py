@@ -93,7 +93,8 @@ def add_profile():
             "height": str(request.form['height']),
             "weight": int(request.form['weight']),
             "smoker": smoker,
-            "username": session['user']
+            "username": session['user'],
+            "my_intentions": none
         }
         mongo.db.profile_name.insert_one(profile)
         return redirect(url_for("dashboard"))
@@ -128,8 +129,9 @@ def exercise():
 def add_intention():
     if request.method == "POST":
         new_intention = {
-            "action_name": request.form.get("action_name")
+            "action_name": mongo.db.exercise_intentions.find({ _id: {type: "objectId"}})
         }
+        print()
         mongo.db.profile_name.insert_one(new_intention)
         flash("New Intention Added")
         return redirect(url_for("my_intentions"))
